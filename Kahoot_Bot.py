@@ -7,7 +7,7 @@ import socket, time
 
 
 root = tk.Tk()
-root.title("Kahoot Bot [v1.2.0]")
+root.title("Kahoot Bot [v1.3.7]")
 root.geometry("300x275")
 root.iconbitmap('icon.ico')
 
