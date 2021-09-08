@@ -1,6 +1,6 @@
 # Python-Kahoot-Bot
-A Kahoot Bot made in python made with the module KahootPY and tkinter.
+A Kahoot Bot made by Zacky2613 in Python 3.7.0 with the modules tkinter (for the gui), and KahootPY (for the botting)
 
-(I'm not that good at tkinter so sorry for the block of code at the start of labels and entrys)
+Currently the bots don't do anything, they won't answer questions they will just kinda sit there, if you're a student you can use this at your school if kahoot botting websites are blocked.
 
-Verison: [v1.3.7]
+Do `pip install -U KahootPY` for the code to work
