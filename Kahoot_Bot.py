@@ -3,13 +3,18 @@ import tkinter as tk
 from tkinter import messagebox
 import socket, time
 
-# To install the kahoot package to "pip install -U KahootPY" or "python -m pip install -U KahootPY" either one works
-
+'''
+    Copyright (c) Python-Kahoot-Bot 2021 Zacky2613
+    
+    P.S: Sorry if the code is hard to read, I'm trying to figure out
+    how to get some functions to work like I want it to and once I get
+    that done I'll go back and make the code easier to read.
+'''
 
 def Kahoot_JoinLoop(game_pin, bot_name_input, bot_amount, join_time):
 
     bot = client()
-    bot_name_number_string_var = 0
+    bot_name_number_string_var = -3
 
     try:    
         print(f"Joining Server: {game_pin}\n")
@@ -19,26 +24,30 @@ def Kahoot_JoinLoop(game_pin, bot_name_input, bot_amount, join_time):
             bot_name = bot_name_input + " " + bot_name_number_string
 
             try:
-                bot.join(game_pin, bot_name)
+                bot.join(game_pin, bot_name) 
 
             except:
                 messagebox.showerror("ERROR", "Unable to join the room, either the room key is incorrect or the room is locked.")
 
-            bot.on("Joined", print(f"Connected: {bot_name}"))    
+
+            bot.on('ready', print(f"Connected: {bot_name}"))    
             bot_name_number_string_var += 1
             time.sleep(join_time)
 
 
     except (ValueError, UnboundLocalError):
-        messagebox.showerror("ERROR", "You must enter a number for the room key and bot amount.")
+        messagebox.showerror("ValueError", "ValueError: One of the inputs of entered was wrong")
+
+
+
 
 
 
 if __name__ ==  "__main__":
 
     root = tk.Tk()
-    root.title("Kahoot Bot [v1.3.7]")
-    root.geometry("300x275")
+    root.title("Kahoot Bot [v1.5.3]")
+    root.geometry("300x325")
     root.iconbitmap('icon.ico')
 
 
@@ -83,8 +92,9 @@ if __name__ ==  "__main__":
     buffer4.pack(side = "top", anchor = "nw")
 
 
-    bot_offset_label = tk.Label(root, text="Bot Joining offset (Best is 0.35): ")
+    bot_offset_label = tk.Label(root, text="Bot Joining offset second: ")
     bot_offset_label.pack(side = "top", anchor = "nw")
+ 
 
     bot_offset_entry = tk.Entry(root, width = 5)
     bot_offset_entry.pack(side = "top", anchor = "nw")
@@ -96,31 +106,35 @@ if __name__ ==  "__main__":
 
     bot = client() 
 
-    def close(bind):
-        root.destroy()
-        bot.leave
-        exit()
-
-
 
     def Joinloop(bind):
         try:
+            # Grabs the user inputs.
             game_pin = int(room_key_entry.get())
             bot_name_input = bot_name_input_entry.get()
             bot_amount = int(bot_amount_entry.get())
             join_time = float(bot_offset_entry.get())
+            # Puts the inputs into the bot spamming func
+            Kahoot_JoinLoop(game_pin, bot_name_input, bot_amount, join_time)
 
         except ValueError:
-            messagebox.showerror("ERROR", "You must enter a number for the room key and bot amount.")
+            # If one of the inputs are wrong (E.G: they put "banana" in the Game Pin) it will give a error
+            messagebox.showerror("ValueError", "ValueError: One of your inputs are wrong, only enter words for the username.")
 
-        Kahoot_JoinLoop(game_pin, bot_name_input, bot_amount, join_time)
+
+            
+    def close(bind):
+        root.destroy()
+        exit()
+
+    def recon(bind):
+        bot.reconnect()
         
-
-
 
 
 
     root.bind("<Return>", Joinloop)
     root.bind("<Escape>", close)
+    root.bind("<Alt-s>", recon)
 
     root.mainloop()
