@@ -4,6 +4,7 @@ A Kahoot Bot made by Zacky2613 in Python [3.7.0] with the modules tkinter (for t
 Currently the bots don't do anything they won't answer questions they will just kinda sit there, this bot works at schools unless the kahoot website is blocked so don't worry
       
 How to make the bots leave: close the TERMINAL not the window and wait roughly 15-25 seconds and they will all leave super quickly
+
 # KahootPY Installation
 
 KahootPY installation: `pip install -U KahootPY` 
