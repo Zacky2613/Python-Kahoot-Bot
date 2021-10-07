@@ -6,8 +6,8 @@ import socket, time                   # The time is used for the offset that the
 """
     Code made by Zacky2613 (c) 2021
     
-    Fun Fact: KahootPY breaks Kahoot.it so your username can be whatever length it wants!
-    + If the game owner makes it so you muse a friendly username with the spinner this alsom bypasses it to!
+    Fun Fact: KahootPY breaks Kahoot.it username length so your username can be whatever length it wants!
+    + If the game owner makes it so you must a friendly username with the spinner this also bypasses it to!
 """
 
 
@@ -42,7 +42,7 @@ def Kahoot_JoinLoop(game_pin, bot_name_input, bot_amount, join_time):
 
 
 
-
+# Checks if the file is running as a script
 if __name__ ==  "__main__":
 
     root = tk.Tk()
@@ -52,6 +52,7 @@ if __name__ ==  "__main__":
 
 
     # Gui part of the code
+    # Sorry for how long and messy it is, it's just how tkinter is :(
     context = tk.Label(root, text=" Please enter all the infomation ")
     context.pack(side = "top")
 
@@ -102,10 +103,7 @@ if __name__ ==  "__main__":
     buffer5 = tk.Label(root, text=" ")
     buffer5.pack(side = "top", anchor = "nw")
 
-
-
     bot = client() 
-
 
     def Joinloop(bind):
         try:
@@ -118,14 +116,9 @@ if __name__ ==  "__main__":
         except ValueError:
             messagebox.showerror("ValueError", "ValueError: One of your inputs are wrong, only enter words for the username.")
         
-
     def close(bind):
         root.destroy()
         
-
-
-
-
     root.bind("<Return>", Joinloop)
     root.bind("<Escape>", close)
 
