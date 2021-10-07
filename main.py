@@ -1,7 +1,7 @@
 from kahoot import client             # Imports kahoot client (what we'll use for botting)
 import tkinter as tk                  # This is made for the GUI 
 from tkinter import messagebox        # If you forget to fill a input (entry box) it will alert you with a error pop up
-import socket, time                   # The time is used for the offset that the bots join
+import time                           # The time is used for the offset that the bots join
 
 """
     Code made by Zacky2613 (c) 2021
@@ -15,11 +15,14 @@ import socket, time                   # The time is used for the offset that the
 def Kahoot_JoinLoop(game_pin, bot_name_input, bot_amount, join_time):
 
     bot = client()
-    bot_name_number_string_var = -3
+    bot_name_number_string_var = -3 # Why -3? Because when the bots join it takes them a second to actually join the game and some bots don't join but just take up a name.
+                                    
 
     try:    
         print(f"Joining Server: {game_pin}")
-        print("WARNING: bots will say 'connected' even if the game pin is invaild!\n")
+        print("WARNING: bots will say 'connected' even if the game pin is invaild!\n") # Why? Becuase the developer of kahootPY stop working on it he never had the time to finsh the error handling for a invaild pin.
+        print("After closing the terminal the bots will take exactly 22 seconds to leave, so watch out for that!")
+        
         for i in range(bot_amount):
 
             bot_name_number_string = str(bot_name_number_string_var + 1)
@@ -48,7 +51,7 @@ if __name__ ==  "__main__":
     root = tk.Tk()
     root.title("Kahoot Bot [v1.5.3]")
     root.geometry("300x325")
-    # root.iconbitmap('icon.ico')
+    root.iconbitmap('icon.ico')
 
 
     # Gui part of the code
@@ -93,10 +96,11 @@ if __name__ ==  "__main__":
     buffer4.pack(side = "top", anchor = "nw")
 
 
+    
     bot_offset_label = tk.Label(root, text="Bot Joining offset second: ")
     bot_offset_label.pack(side = "top", anchor = "nw")
 
-
+    
     bot_offset_entry = tk.Entry(root, width = 5)
     bot_offset_entry.pack(side = "top", anchor = "nw")
 
