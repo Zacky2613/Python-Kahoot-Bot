@@ -1,15 +1,24 @@
 # Python-Kahoot-Bot
-A Kahoot Bot made by Zacky2613 in Python [3.7.0] with the modules tkinter (for the gui), and KahootPY (for the botting).
+[![Zacky2613 - Python-Kahoot-Bot](https://img.shields.io/static/v1?label=Zacky2613&message=Python-Kahoot-Bot&color=green&logo=github)](https://github.com/Zacky2613/Python-Kahoot-Bot "Go to GitHub repo")
 
-Currently the bots don't do anything they won't answer questions they will just kinda sit there, this bot works at schools unless the kahoot website is blocked so don't worry.
+[![License](https://img.shields.io/badge/License-MIT-green)](#license)
+[![stars - Python-Kahoot-Bot](https://img.shields.io/github/stars/Zacky2613/Python-Kahoot-Bot?style=social)](https://github.com/Zacky2613/Python-Kahoot-Bot)
+[![forks - Python-Kahoot-Bot](https://img.shields.io/github/forks/Zacky2613/Python-Kahoot-Bot?style=social)](https://github.com/Zacky2613/Python-Kahoot-Bot)
 
-If you want the bots to leave close the terminal (not the GUI / gooey) and wait 22 seconds and the bots will leave
+Python-Kahoot-Bot is a Python kahoot bot filler made with Tkinter and KahootPY. These bots will not answer questions however they will join the room key
+you put and wil flood it to the amount you ask, if you want them to leave close the terminal NOT the tkinter window and they'll leave 22 seconds later.
 
 # KahootPY Installation
 
-KahootPY installation: `pip install -U KahootPY` 
+KahootPY installion (Python 3.6 or higher): 
+```
+# Linux/macOS
+py3 -m pip install -U KahootPY
 
-# Docs
+# Windows
+python3 -m pip install -U KahootPY
+```
+
+# Documentation
 
 Here's the docs for KahootPY: https://github.com/boiimakillu/KahootPY/blob/master/Documentation.md
-(I don't fully understand them so if you want to improve this you can!)
