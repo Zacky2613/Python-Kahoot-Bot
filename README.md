@@ -5,6 +5,8 @@
 [![stars - Python-Kahoot-Bot](https://img.shields.io/github/stars/Zacky2613/Python-Kahoot-Bot?style=social)](https://github.com/Zacky2613/Python-Kahoot-Bot)
 [![forks - Python-Kahoot-Bot](https://img.shields.io/github/forks/Zacky2613/Python-Kahoot-Bot?style=social)](https://github.com/Zacky2613/Python-Kahoot-Bot)
 
+Archive: As of April 4th 2022 I've had to archive this repo because it no longer works from what I know.
+
 Python-Kahoot-Bot is a Python kahoot bot filler made with Tkinter and KahootPY. These bots will not answer questions however they will join the room key
 you put and wil flood it to the amount you ask, if you want them to leave close the terminal NOT the tkinter window and they'll leave 22 seconds later.
 
